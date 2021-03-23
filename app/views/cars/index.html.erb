@@ -1,32 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cars</h1>
+<h1>Available Cars</h1>
+  <% @cars.each do |car| %>
+  <div class="card" style="width: 18rem;">
+  <%= cl_image_tag car.photo.key %>
+  <div class="card-body">
+    <h5 class="card-title"><%= car.model %></h5>
+    <p class="card-text"><%= car.description %></p>
+    <%= link_to 'Show', car %>
+  </div>
+</div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Reg nr</th>
-      <th>Description</th>
-      <th>Model</th>
-      <th>Year</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.reg_nr %></td>
-        <td><%= car.description %></td>
-        <td><%= car.model %></td>
-        <td><%= car.year %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
