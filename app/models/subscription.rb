@@ -1,7 +1,5 @@
 class Subscription < ApplicationRecord
-    belongs_to :user
-    belongs_to :car
-
-    validates :date_start, presence: true
-
+		belongs_to :user
+		# belongs_to :car
+		validates :date_start, presence: true
 end

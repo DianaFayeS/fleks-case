@@ -8,7 +8,18 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
+import flatpickr from "flatpickr"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('turbolinks:load', () => {
+    flatpickr("[data-behavior='flatpickr']", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+				time_24hr: true,
+				minDate: new Date().fp_incr(3),
+				maxDate: new Date().fp_incr(21)	
+    })
+	})

@@ -1,6 +1,6 @@
 <h1>New Subscription</h1>
 <%= simple_form_for([@car, @subscription]) do |f| %>
-        <%= f.input :date_start, as: :string, label: "Date from", placeholder: "e.g. 22-02-2020", wrapper_html: { class: "inline_field_wrapper" } %>
+        <%= f.text_field :date_start, data: { behavior: "flatpickr" }, as: :string, label: "Date from", placeholder: "e.g. 22-02-2020", wrapper_html: { class: "inline_field_wrapper" } %>
         <%= f.submit "BOOK NOW", class: "btn btn-primary btn-block btn-booking" %>
 <% end %>
 

@@ -2,16 +2,17 @@
 
 <h1>Available Cars</h1>
   <% @cars.each do |car| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-4 spec">
   <div class="card" style="width: 18rem;">
   <%= cl_image_tag car.photo.key %>
-  <div class="card-body">
-    <h5 class="card-title"><%= car.model %></h5>
-    <p class="card-text"><%= car.description %></p>
-    <%= link_to 'Show', car %>
+    <div class="card-body">
+      <h5 class="card-title"><%= car.model %></h5>
+      <p class="card-text"><%= car.description %></p>
+      <%= link_to 'Show', car %>
+    </div>
   </div>
-</div>
+  </div>
 <% end %>
-
 
 <br>
 

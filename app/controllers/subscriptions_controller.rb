@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: %i[ show edit update destroy ]
-  skip_before_action :verify_authenticity_token
+  skip_before_action :authenticate_user!, only: :index
 
   # GET /subscriptions or /subscriptions.json
   def index
@@ -25,13 +25,12 @@ class SubscriptionsController < ApplicationController
   def create
     @car = Car.find(params[:car_id])
     @subscription = Subscription.new(subscription_params)
-
-    respond_to do |format|
-      if @subscription.save
-        format.html { redirect_to @subscription, notice: "Subscription was successfully created." }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    @subscription.user = current_user
+    @subscription.car_id = params[:car_id]
+    if @subscription.save
+      redirect_to user_subscriptions_path
+    else
+      render :new
     end
   end
 
