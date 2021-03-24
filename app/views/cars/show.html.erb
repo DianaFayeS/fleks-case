@@ -15,12 +15,10 @@
   <strong>Model:</strong>
   <%= @car.model %>
 </p>
-
 <p>
   <strong>Year:</strong>
   <%= @car.year %>
 </p>
 
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
-<%= link_to 'Book', new_car_subscription_path(@car) %>
+<%= link_to 'Back', cars_path , class: 'btn btn-primary' %>
+<%= link_to 'Book', new_car_subscription_path(@car), class: 'btn btn-primary' %>

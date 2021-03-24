@@ -1,5 +1,6 @@
+  # rubocop:disable Style/Documentation
 class SubscriptionsController < ApplicationController
-  before_action :set_subscription, only: %i[ show edit update destroy ]
+  before_action :set_subscription, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: :index
 
   # GET /subscriptions or /subscriptions.json
@@ -8,7 +9,7 @@ class SubscriptionsController < ApplicationController
   end
 
   # GET /subscriptions/1 or /subscriptions/1.json
-  def show
+  def show 
   end
 
   # GET /subscriptions/new
@@ -54,13 +55,13 @@ class SubscriptionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subscription
-      @subscription = Subscription.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_subscription
+    @subscription = Subscription.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def subscription_params
-      params.require(:subscription).permit(:date_start, :date_end, :user, :car_id )
-    end
+  # Only allow a list of trusted parameters through.
+  def subscription_params
+    params.require(:subscription).permit(:date_start, :date_end, :user, :car_id )
+  end
 end
