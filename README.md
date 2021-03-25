@@ -17,13 +17,22 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.6'
 
 gem 'rails', '~> 6.1.3'
+
 gem 'pg', '~> 1.1'
+
 gem 'puma', '~> 5.0'
+
 gem 'sass-rails', '>= 6'
+
 gem 'webpacker', '~> 5.0'
+
 gem 'turbolinks', '~> 5'
+
 gem 'devise'
+
 gem 'cloudinary', '~> 1.16.0'
+
 gem 'font-awesome-sass'
+
 gem 'simple_form'
 
