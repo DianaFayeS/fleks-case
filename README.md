@@ -4,7 +4,7 @@ Considering applications functionality, I have chosen Ruby on Rails, because it'
 
 I have chosen the device gem, because it does all the authentication work for you. Device is a full-featured authentication mechanism for Rails applications and it is is quick to generate, widely used and properly tested.
 
-Cloudinary was my choice, because it speeds up the delivery of images and automatically optimizes. It comes loaded with filters, size optimizations, and formatting options.
+Cloudinary was my choice, because it speeds up the delivery of images and automatically optimizes them. It comes loaded with filters, size optimizations, and formatting options.
 
 
 Dependency Tracking
